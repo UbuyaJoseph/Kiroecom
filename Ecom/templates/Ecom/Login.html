@@ -1,0 +1,29 @@
+{% extends 'Ecom/Main.html' %}
+{% load static %}
+{% block content %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+
+    <form action ="Login" method="POST"> 
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="password" name="password1" placeholder="password"><br>
+        <input type="submit">
+    </form>
+
+    <div>
+        {% for message in messages %}
+        <h2>{{messages}}</h2>
+        {% endfor  %}
+    </div>
+
+</body>
+</html>
+
+{% endblock content %}
