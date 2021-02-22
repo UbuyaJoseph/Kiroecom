@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Estore.wsgi.application'
+WSGI_APPLICATION = 'Estore.wsgi'
 
 
 # Database
