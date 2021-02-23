@@ -6,7 +6,9 @@ To run this application, follow the steps:( after cloning the repository.)
 ```
 1. pip3 install -r requirements.txt
 
-2. python3 migrate runserver ( development server)
+2. python3 manage.py migrate  (django ORM)
 
-3. gunicorn Estore.wsgi ( running production server)
+3. python3 manage.py runserver ( development server)
+
+4. gunicorn Estore.wsgi ( running production server)
 ```
