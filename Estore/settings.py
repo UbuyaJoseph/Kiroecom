@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#h*(@8&h*na=e)@3(mvp^=jny6!uj055kynv$l^vb)vajde%e*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'kiroecom.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'kiroecom.herokuapp.com','kiroecomm.herokuapp.com']
 
 
 # Application definition
@@ -134,4 +134,5 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
