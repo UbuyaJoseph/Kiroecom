@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '#h*(@8&h*na=e)@3(mvp^=jny6!uj055kynv$l^vb)vajde%e*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'kiroecom.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'kiroecom.herokuapp.com','kiroecomm.herokuapp.com']
 
 
 # Application definition
@@ -89,8 +89,19 @@ DATABASES = {
     }
 }
 
+# postgres://pjpfudkprdjtln:7a95a5db452052f8da71ec9cd48928b659877baa1ec8eeb6c25c1a32157d650f@ec2-3-222-11-129.compute-1.amazonaws.com:5432/d6u73lqipk55jk
+'''
+online database on heroku.
+  'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd6u73lqipk55jk',
+        'HOST': 'ec2-3-222-11-129.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'pjpfudkprdjtln',
+        'PASSWORD': '7a95a5db452052f8da71ec9cd48928b659877baa1ec8eeb6c25c1a32157d650f',
 
-
+    }
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -127,11 +138,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
