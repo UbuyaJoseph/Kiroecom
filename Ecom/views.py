@@ -36,7 +36,6 @@ def Checkout(request):
     order = data['order']
     items = data['items']
 
-
     context = {'items':items, 'order':order, 'cartItems': cartItems }
     return render(request, 'Ecom/Checkout.html', context)
 
@@ -48,6 +47,8 @@ def updateItem(request):
 
     print('Action:', action)
     print('productId:', productId)
+    print('am adding to cart!')
+
 
     customer = request.user.customer
     product = Product.objects.get(id=productId)

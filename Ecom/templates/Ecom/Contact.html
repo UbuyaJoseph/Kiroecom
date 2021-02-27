@@ -84,6 +84,7 @@ input[type=submit]:hover {
     </div>
     <div class="column">
       <form action="contact" method="POST">
+        {% csrf_token %}
         <label for="fname">First Name</label>
         <input type="text" id="fname" name="firstname" placeholder="Your name..">
         <label for="lname">Last Name</label>
@@ -92,10 +93,10 @@ input[type=submit]:hover {
         <select id="country" name="country">
           <option value="Uganda">Uganda</option>
           <option value="South Sudan">South Sudan</option>
-          <option value="usa">Kenya</option>
-          <option value="usa">Rwanda</option>
-          <option value="usa">Tanzania</option>
-          <option value="usa">Burundi</option>
+          <option value="Kenya">Kenya</option>
+          <option value="Rwanda">Rwanda</option>
+          <option value="Tanzania">Tanzania</option>
+          <option value="Burundi">Burundi</option>
         </select>
         <label for="subject">Subject</label>
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
